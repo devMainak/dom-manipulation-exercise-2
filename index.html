@@ -25,6 +25,12 @@
   <input id="studentMessage" type="text"/>
   <button id="displayResponseButton">Display Response</button>
   <p id="displayResponse"></p>
+
+
+  <label for="ageInput">Enter your age:</label>
+  <input id="ageInput" type="number"/>
+  <button id="checkAgeButton">Check Age</button>
+  <p id="checkAgeResponse"></p>
   
   <script>
 
@@ -66,6 +72,24 @@
       else
       {
         displayResponse.textContent = `Invalid input. Answer in 'Yes' or 'No'.`
+      }
+    });
+
+
+    //check adult of minor using age
+    const ageInput =  document.getElementById("ageInput");
+    const checkAgeButton = document.getElementById("checkAgeButton");
+    const checkAgeResponse = document.getElementById("checkAgeResponse");
+
+    checkAgeButton.addEventListener("click", function(){
+      const age = ageInput.value;
+      if (age >= 18)
+      {
+        checkAgeResponse.textContent = `You are an Adult.`;
+      }
+      else
+      {
+        checkAgeResponse.textContent = `You are a Minor.`
       }
     });
     
