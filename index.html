@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+</head>
+
+<body>
+
+  <label for="countryInput">Enter your country:</label>
+  <input id="countryInput" type="text"/>
+  <button id="displayCountryButton">Display Country</button>
+  <p id="displayCountryName"></p>
+  
+  <script>
+
+    //Display country name
+    const countryInput = document.getElementById("countryInput");
+    const displayCountryButton = document.getElementById("displayCountryButton");
+    const displayCountryName = document.getElementById("displayCountryName");
+
+    displayCountryButton.addEventListener("click", function(){
+      const country = countryInput.value;
+      displayCountryName.textContent = `Your country is: ${country}.`
+    });
+    
+  </script>
+</body>
+
+</html>
