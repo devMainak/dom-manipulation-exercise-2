@@ -13,6 +13,12 @@
   <input id="countryInput" type="text"/>
   <button id="displayCountryButton">Display Country</button>
   <p id="displayCountryName"></p>
+
+
+  <label for="websiteName">Enter a website name:</label>
+  <input id="websiteName" type="text"/>
+  <button id="displayHeadingButton">Display Heading</button>
+  <h2 id="displayWebsiteHeading"></h2>
   
   <script>
 
@@ -25,6 +31,18 @@
       const country = countryInput.value;
       displayCountryName.textContent = `Your country is: ${country}.`
     });
+
+    //Dsiplay website as heading
+    const websiteName = document.getElementById("websiteName");
+    const displayHeadingButton = document.getElementById("displayHeadingButton");
+    const displayWebsiteHeading = document.getElementById("displayWebsiteHeading");
+
+    displayHeadingButton.addEventListener("click", function(){
+      const website = websiteName.value;
+      displayWebsiteHeading.textContent = website;
+    });
+
+    //
     
   </script>
 </body>
