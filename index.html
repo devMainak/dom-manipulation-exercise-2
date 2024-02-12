@@ -19,6 +19,12 @@
   <input id="websiteName" type="text"/>
   <button id="displayHeadingButton">Display Heading</button>
   <h2 id="displayWebsiteHeading"></h2>
+
+
+  <label for="studentMessage">Are you a student?</label>
+  <input id="studentMessage" type="text"/>
+  <button id="displayResponseButton">Display Response</button>
+  <p id="displayResponse"></p>
   
   <script>
 
@@ -42,7 +48,26 @@
       displayWebsiteHeading.textContent = website;
     });
 
-    //
+    //Display student response
+    const studentMessage = document.getElementById("studentMessage");
+    const displayResponseButton =  document.getElementById("displayResponseButton");
+    const displayResponse =  document.getElementById("displayResponse");
+
+    displayResponseButton.addEventListener("click", function(){
+      const studentAnswer = studentMessage.value;
+      if (studentAnswer == "YES" || studentAnswer == "Yes" || studentAnswer == "yes")
+      {
+        displayResponse.textContent = `You are a student.`
+      }
+      else if (studentAnswer == "NO" || studentAnswer == "No" || studentAnswer == "no")
+      {
+        displayResponse.textContent = `You are not a student.`
+      }
+      else
+      {
+        displayResponse.textContent = `Invalid input. Answer in 'Yes' or 'No'.`
+      }
+    });
     
   </script>
 </body>
